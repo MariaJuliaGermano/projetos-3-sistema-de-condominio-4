@@ -14,7 +14,7 @@
 
 ### Protótipo LoFi
 <b>Link:</b> https://www.figma.com/design/MQ7tfXz8hMkbnDqvilS433/Untitled?node-id=0-1&t=EY4T2Vp3YjMKr2Vf-1
-<b>Link:</b> https://www.figma.com/design/uqvQwAdAEfrFJGFzbhrwY7/Protótipo-Alta-fidelidade?node-id=0-1&p=f&t=FkXipyaQfHtclcc5-0
+<br><b>Link:</b> https://www.figma.com/design/uqvQwAdAEfrFJGFzbhrwY7/Protótipo-Alta-fidelidade?node-id=0-1&p=f&t=FkXipyaQfHtclcc5-0
 
 ### Screen Cast
 <b>Link:</b> https://youtu.be/hQs_UOytmYM
