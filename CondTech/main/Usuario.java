@@ -1,3 +1,5 @@
+package main;
+
 import java.util.UUID;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -211,49 +213,49 @@ public class Usuario {
         }
     }
 
-    public String getId(){
+    public String getId() throws IllegalStateException{
         if(this.id != null){
             return this.id;
         } else{
             throw new IllegalStateException("algo de errado ocorreu na definição do id deste usuário");
         }
     }
-    public String getNome(){
+    public String getNome() throws IllegalStateException{
         if(this.nome != null){
             return this.nome;
         } else{
             throw new IllegalStateException("este usuário ainda não possui um nome definido");
         }
     }
-    public int getCpf(){
+    public int getCpf() throws IllegalStateException{
         if(this.cpf != 0){
             return this.cpf;
         } else{
             throw new IllegalStateException("algo de errado ocorreu na definição do cpf deste usuário");
         }
     }
-    public String getEmail(){
+    public String getEmail() throws IllegalStateException{
         if(this.email != null){
             return this.email;
         } else{
             throw new IllegalStateException("este usuário ainda não possui um email definido");
         }
     }
-    public String getSenha(){
+    public String getSenha() throws IllegalStateException{
         if(this.senha != null){
             return this.senha;
         } else{
             throw new IllegalStateException("algo de errado ocorreu na definição da senha deste usuário");
         }
     }
-    public int getTelefone(){
+    public int getTelefone() throws IllegalStateException{
         if(this.telefone != 0){
             return this.telefone;
         } else{
             throw new IllegalStateException("este usuário ainda não possui um telefone definido");
         }
     }
-    public String getTipoUsuario(){
+    public String getTipoUsuario() throws IllegalStateException{
         if(this.tipoUsuario != null){
             return this.tipoUsuario;
         } else{
