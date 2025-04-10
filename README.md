@@ -54,6 +54,7 @@
 
 *👨‍💻 Gabriel Tenorio
 
+## 🖇️ Entrega 1
 
 <ul>
 
@@ -77,3 +78,26 @@
 
   <li>
     <a  href="https://youtu.be/hQs_UOytmYM"
+      >ScreenCast 1</a
+    >
+  </li>
+
+</ul>
+
+## 🖇️ Entrega 2
+
+<ul>
+
+  <li>
+    <a  href="https://lucid.app/lucidchart/9c625870-c04a-4fed-9088-061c8881d635/edit?viewport_loc=-773%2C-58%2C3631%2C1681%2C0_0&invitationId=inv_02c7b44c-c23f-4ced-99e4-f91deefe201e" 
+        >Diagrama de Classes</a
+    >
+  </li>
+
+  <li>
+    <a  href="https://youtu.be/9lmaGdYEhw4"
+      >ScreenCast 2</a
+    >
+  </li>
+  
+</ul>
