@@ -54,7 +54,6 @@
 
 *👨‍💻 Gabriel Tenorio
 
-## 🖇️ Links Importantes
 
 <ul>
 
@@ -78,8 +77,3 @@
 
   <li>
     <a  href="https://youtu.be/hQs_UOytmYM"
-      >ScreenCast</a
-    >
-  </li>
-
-</ul>
