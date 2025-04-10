@@ -54,7 +54,6 @@
 
 *👨‍💻 Gabriel Tenorio
 
-## 🖇️ Entrega 1
 
 <ul>
 
@@ -78,26 +77,3 @@
 
   <li>
     <a  href="https://youtu.be/hQs_UOytmYM"
-      >ScreenCast 1</a
-    >
-  </li>
-
-</ul>
-
-## 🖇️ Entrega 2
-
-<ul>
-
-  <li>
-    <a  href=""
-      >Diagrama de Classes</a
-    >
-  </li>
-
-  <li>
-    <a  href=""
-      >ScreenCast 2</a
-    >
-  </li>
-  
-</ul>
