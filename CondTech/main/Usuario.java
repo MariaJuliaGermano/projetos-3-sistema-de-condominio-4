@@ -8,10 +8,10 @@ public class Usuario {
     
     private final String id = UUID.randomUUID().toString();
     private String nome;
-    private int cpf;
+    private double cpf;
     private String email;
     private String senha;
-    private int telefone;
+    private double telefone;
     private String tipoUsuario;
 
     public void setNome(String novoNome) throws IllegalArgumentException{
@@ -38,9 +38,9 @@ public class Usuario {
             if(novoCpf.trim() != ""){
                 if(!novoCpf.trim().contains("\n")){
                     if(novoCpf.length() == 11){
-                        int temp;
+                        double temp;
                         try{
-                            temp = Integer.parseInt(novoCpf);
+                            temp = Double.parseDouble(novoCpf);
                         }
                         catch(NumberFormatException n){
                             throw new IllegalArgumentException("o parametro passado não pode ser convertido para um valor numérico válido");
@@ -129,9 +129,9 @@ public class Usuario {
             if(novoTelefone.trim() != ""){
                 if(!novoTelefone.trim().contains("\n")){
                     if(novoTelefone.length() == 11){
-                        int temp;
+                        double temp;
                         try{
-                            temp = Integer.parseInt(novoTelefone);
+                            temp = Double.parseDouble(novoTelefone);
                         }
                         catch(NumberFormatException n){
                             throw new IllegalArgumentException("o parametro passado não pode ser convertido para um valor numérico válido");
@@ -174,27 +174,15 @@ public class Usuario {
                         }
                         switch (temp) {
                             case 1:
-                                if(!this.tipoUsuario.equals("Condômino")){
-                                    this.tipoUsuario = "Condômino";
-                                } else{
-                                    throw new IllegalArgumentException("este usuário já é do tiopo Condômino");
-                                }
+                                this.tipoUsuario = "Condômino";
                                 break;
 
                             case 2:
-                                if(!this.tipoUsuario.equals("Síndico")){
-                                    this.tipoUsuario = "Síndico";
-                                } else{
-                                    throw new IllegalArgumentException("este usuário já é do tiopo Síndico");
-                                }
+                                this.tipoUsuario = "Síndico";
                                 break;
                             
                             case 3:
-                                if(!this.tipoUsuario.equals("Funcionário")){
-                                    this.tipoUsuario = "Funcionário";
-                                } else{
-                                    throw new IllegalArgumentException("este usuário já é do tiopo Funcionário");
-                                }
+                                this.tipoUsuario = "Funcionário";
                                 break;
                             default:
                                 throw new IllegalArgumentException("o parâmetro passado do deve ser apenas 1 para Condômino, 2 para Síndico e 3 para Funcionário");
@@ -227,7 +215,7 @@ public class Usuario {
             throw new IllegalStateException("este usuário ainda não possui um nome definido");
         }
     }
-    public int getCpf() throws IllegalStateException{
+    public double getCpf() throws IllegalStateException{
         if(this.cpf != 0){
             return this.cpf;
         } else{
@@ -248,7 +236,7 @@ public class Usuario {
             throw new IllegalStateException("algo de errado ocorreu na definição da senha deste usuário");
         }
     }
-    public int getTelefone() throws IllegalStateException{
+    public double getTelefone() throws IllegalStateException{
         if(this.telefone != 0){
             return this.telefone;
         } else{

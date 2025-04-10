@@ -68,4 +68,16 @@ public class Mensagem {
         setIdUsuario(user);
         setMensagem(mensagem);
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj) return true;
+        if (obj == null || this.getClass() != obj.getClass()) return false;
+        Mensagem mensagem = (Mensagem) obj;
+        if (this.id != null ? !this.id.equals(mensagem.getId()) : mensagem.getId() != null) return false;
+        if (this.idUsuario != null ? !this.idUsuario.equals(mensagem.getIdUsuario()) : mensagem.getIdUsuario() != null) return false;
+        if (this.mensagem != null ? !this.mensagem.equals(mensagem.getMensagem()) : mensagem.getMensagem() != null) return false;
+        
+        return true;
+    }
 }
