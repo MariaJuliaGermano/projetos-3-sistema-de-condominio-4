@@ -1,0 +1,7 @@
+{
+    "java.search.scope": "all",
+    "java.project.sourcePaths": [
+        "CondTech"
+    ],
+    "java.project.referencedLibraries": []
+}
