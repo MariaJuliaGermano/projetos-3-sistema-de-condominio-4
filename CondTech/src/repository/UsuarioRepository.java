@@ -6,7 +6,7 @@ import model.Usuario;
 
 public class UsuarioRepository {
     
-    private List<Usuario> usuarios;
+    private final List<Usuario> usuarios;
 
     public UsuarioRepository() {
         this.usuarios = new ArrayList<>();
