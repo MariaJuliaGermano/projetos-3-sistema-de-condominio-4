@@ -13,14 +13,16 @@ public class Usuario {
     private String senha;
     private Long telefone;
     private String tipoUsuario;
+    private Boolean admin;
 
-    public Usuario(String nome, String cpf, String email, String senha, String Telefone, String tipoUsuario){
+    public Usuario(String nome, String cpf, String email, String senha, String Telefone, String tipoUsuario, Boolean admin){
         setNome(nome);
         setCpf(cpf);
         setEmail(email);
         setSenha(senha);
         setTelefone(Telefone);
         setTipoUsuario(tipoUsuario);
+        setAdmin(admin);
     }
 
     public void setNome(String novoNome) throws IllegalArgumentException{
@@ -250,6 +252,14 @@ public class Usuario {
         }
     }
 
+    public void setAdmin(Boolean admin) throws IllegalArgumentException{
+        if(admin != null){
+            this.admin = admin;
+        } else{
+            throw new IllegalArgumentException("o parâmetro passado é nulo");
+        }
+    }
+
     public String getId() throws IllegalStateException{
         if(this.id != null){
             return this.id;
@@ -303,6 +313,14 @@ public class Usuario {
             return this.tipoUsuario;
         } else{
             throw new IllegalStateException("algo de errado ocorreu na definição do tipo deste usuário");
+        }
+    }
+
+    public Boolean getAdmin() throws IllegalArgumentException{
+        if(admin != null){
+            return this.admin;
+        } else{
+            throw new IllegalArgumentException("algo de errado ocorreu na definição do cargo deste usuário");
         }
     }
 

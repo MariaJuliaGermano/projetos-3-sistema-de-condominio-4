@@ -15,9 +15,6 @@ public class AuthService {
 
     public boolean autenticar(String Nome, String Senha) {
         Usuario user = repo.buscarPorNome(Nome);
-        System.out.println(Nome);
-        System.out.println(Senha);
-        System.out.println(user);
         try{
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             byte[] senhaBytes = md.digest(Senha.getBytes());
@@ -31,8 +28,6 @@ public class AuthService {
         catch(NoSuchAlgorithmException n){
             throw new RuntimeException("o algorítmo sha-256 não está disponível");
         }
-        System.out.println(user.getNome());
-        System.out.println(user.getSenha());
         return user != null && user.getSenha().equals(Senha);
     }
 }
