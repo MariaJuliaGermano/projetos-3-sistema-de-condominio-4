@@ -195,10 +195,10 @@ public class Usuario {
                         if(this.tipoUsuario != null) {
                             switch (temp) {
                                 case 1:
-                                    if(!this.tipoUsuario.equals("Condômino")){
-                                        this.tipoUsuario = "Condômino";
+                                    if(!this.tipoUsuario.equals("Morador")){
+                                        this.tipoUsuario = "Morador";
                                     } else{
-                                        throw new IllegalArgumentException("este usuário já é do tiopo Condômino");
+                                        throw new IllegalArgumentException("este usuário já é do tipo Condômino");
                                     }
                                     break;
 
@@ -206,7 +206,7 @@ public class Usuario {
                                     if(!this.tipoUsuario.equals("Síndico")){
                                         this.tipoUsuario = "Síndico";
                                     } else{
-                                        throw new IllegalArgumentException("este usuário já é do tiopo Síndico");
+                                        throw new IllegalArgumentException("este usuário já é do tipo Síndico");
                                     }
                                     break;
                                 
@@ -214,7 +214,7 @@ public class Usuario {
                                     if(!this.tipoUsuario.equals("Funcionário")){
                                         this.tipoUsuario = "Funcionário";
                                     } else{
-                                        throw new IllegalArgumentException("este usuário já é do tiopo Funcionário");
+                                        throw new IllegalArgumentException("este usuário já é do tipo Funcionário");
                                     }
                                     break;
                                 default:
@@ -223,7 +223,7 @@ public class Usuario {
                         } else {
                             switch (temp) {
                                 case 1:
-                                    this.tipoUsuario = "Condômino";
+                                    this.tipoUsuario = "Morador";
                                     break;
 
                                 case 2:
