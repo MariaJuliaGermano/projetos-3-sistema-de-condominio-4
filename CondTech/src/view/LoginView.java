@@ -5,9 +5,9 @@ import java.util.Scanner;
 import controller.LoginController;
 import model.Usuario;
 import repository.AreaReservadaRepository;
+import repository.OcorrenciaRepository;
 import repository.UsuarioRepository;
 import service.AuthService;
-import view.HomeView;
 
 public class LoginView {
 
@@ -16,14 +16,14 @@ public class LoginView {
     private final LoginController loginController;
     private final UsuarioRepository  userRepo;
     private final AreaReservadaRepository arRepo;
-    private final AuthService authService;
+    private final OcorrenciaRepository ocRepo;
 
-    public LoginView(Scanner scanner, LoginController loginController, UsuarioRepository userRepo, AreaReservadaRepository arRepo, AuthService authService) {
+    public LoginView(Scanner scanner, UsuarioRepository userRepo, AreaReservadaRepository arRepo, OcorrenciaRepository ocRepo) {
         this.scanner = scanner;
-        this.loginController = loginController;
+        this.loginController = new LoginController(new AuthService(userRepo), userRepo);
         this.userRepo = userRepo;
         this.arRepo = arRepo;
-        this.authService = authService;
+        this.ocRepo = ocRepo;
     }
 
     public void exibirMenu() {
@@ -50,7 +50,7 @@ public class LoginView {
 
                     if (usuarioLogado != null) {
                         System.out.println("\nLogin realizado com sucesso! Bem-vindo, " + usuarioLogado.getNome());
-                        new HomeView(scanner, loginController, userRepo, arRepo, authService).exibirMenu(usuarioLogado);
+                        new HomeView(scanner, userRepo, arRepo, ocRepo).exibirMenu(usuarioLogado);
                     } else {
                         System.out.println("Login falhou. Nome ou senha incorretos.");
                     }

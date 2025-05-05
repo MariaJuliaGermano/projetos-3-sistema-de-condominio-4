@@ -2,26 +2,24 @@ package view;
 
 import java.util.Scanner;
 
-import controller.LoginController;
 import model.Usuario;
 import repository.AreaReservadaRepository;
+import repository.OcorrenciaRepository;
 import repository.UsuarioRepository;
-import service.AuthService;
 
 public class HomeView {
-    private final Scanner scanner;
 
-    private final LoginController loginController;
+    private final Scanner scanner;
     private final UsuarioRepository  userRepo;
     private final AreaReservadaRepository arRepo;
-    private final AuthService authService;
+    private final OcorrenciaRepository ocRepo;
 
-    public HomeView(Scanner scanner, LoginController loginController, UsuarioRepository userRepo, AreaReservadaRepository arRepo, AuthService authService) {
+
+    public HomeView(Scanner scanner, UsuarioRepository userRepo, AreaReservadaRepository arRepo, OcorrenciaRepository ocRepo) {
         this.scanner = scanner;
-        this.loginController = loginController;
         this.userRepo = userRepo;
         this.arRepo = arRepo;
-        this.authService = authService;
+        this.ocRepo = ocRepo;
     }
 
     public void exibirMenu(Usuario usuarioLogado) {
@@ -33,7 +31,7 @@ public class HomeView {
             System.out.println("3 - Area Reservada");
             
             if (usuarioLogado.getAdmin()) {
-                System.out.println("4 - Criar novo usuário");
+                System.out.println("4 - Admin");
             }
             
             System.out.println("0 - Logout");
@@ -47,11 +45,13 @@ public class HomeView {
                     break;
 
                 case 2:
+                    OcorrenciaView ocorrenciaView = new OcorrenciaView(scanner, ocRepo);
+                    ocorrenciaView.exibirMenu(usuarioLogado);
                     break;
-
                 case 3:
+                    AreaReservadaView areaReservadaView = new AreaReservadaView(scanner, arRepo);
+                    areaReservadaView.exibirMenu(usuarioLogado);
                     break;
-                
                 case 4:
                 if (usuarioLogado.getAdmin()) {
                         System.out.print("Nome do novo usuário: ");
