@@ -4,6 +4,7 @@ import model.Usuario;
 import repository.AreaReservadaRepository;
 import repository.OcorrenciaRepository;
 import repository.UsuarioRepository;
+import repository.MensagemRepository;
 import view.LoginView;
 
 public class Main {
@@ -13,12 +14,13 @@ public class Main {
         UsuarioRepository userRepo = new UsuarioRepository();
         AreaReservadaRepository arRepo = new AreaReservadaRepository();
         OcorrenciaRepository ocRepo = new OcorrenciaRepository();
+        MensagemRepository msgRepo = new MensagemRepository();
 
         Usuario usuario1 = new Usuario( "admin", "12312312312", "admin@gmail.com", "admin", "12345678901", "1", true);
 
         userRepo.adicionarUsuario(usuario1);
 
-        new LoginView(scanner, userRepo, arRepo, ocRepo).exibirMenu();        
+        new LoginView(scanner, userRepo, arRepo, ocRepo, msgRepo).exibirMenu();
 
         scanner.close();
         

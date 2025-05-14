@@ -6,6 +6,7 @@ import model.Usuario;
 import repository.AreaReservadaRepository;
 import repository.OcorrenciaRepository;
 import repository.UsuarioRepository;
+import repository.MensagemRepository;
 
 public class HomeView {
 
@@ -13,13 +14,15 @@ public class HomeView {
     private final UsuarioRepository  userRepo;
     private final AreaReservadaRepository arRepo;
     private final OcorrenciaRepository ocRepo;
+    private final MensagemRepository msgRepo;
 
-
-    public HomeView(Scanner scanner, UsuarioRepository userRepo, AreaReservadaRepository arRepo, OcorrenciaRepository ocRepo) {
+    public HomeView(Scanner scanner, UsuarioRepository userRepo, AreaReservadaRepository arRepo, 
+                   OcorrenciaRepository ocRepo, MensagemRepository msgRepo) {
         this.scanner = scanner;
         this.userRepo = userRepo;
         this.arRepo = arRepo;
         this.ocRepo = ocRepo;
+        this.msgRepo = msgRepo;
     }
 
     public void exibirMenu(Usuario usuarioLogado) {
@@ -42,6 +45,8 @@ public class HomeView {
 
             switch (opcao) {
                 case 1:
+                    ChatView chatView = new ChatView(scanner, userRepo, msgRepo);
+                    chatView.exibirMenu(usuarioLogado);
                     break;
 
                 case 2:
