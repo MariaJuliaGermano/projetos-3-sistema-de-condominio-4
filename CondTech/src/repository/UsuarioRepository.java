@@ -71,7 +71,7 @@ public class UsuarioRepository {
                         break;
                 }
                 
-                Usuario user = new Usuario(rs.getString("nome"), rs.getString("cpf"), rs.getString("email"), rs.getString("senha"), rs.getString("telefone"), temp, rs.getBoolean("adm"), true);
+                Usuario user = new Usuario(rs.getString("id"), rs.getString("nome"), rs.getString("cpf"), rs.getString("email"), rs.getString("senha"), rs.getString("telefone"), temp, rs.getBoolean("adm"));
                 
                 return user;
             } else{
@@ -114,7 +114,7 @@ public class UsuarioRepository {
                         break;
                 }
 
-                usuarios.add(new Usuario(rs.getString("nome"), rs.getString("cpf"), rs.getString("email"), rs.getString("senha"), rs.getString("telefone"), temp, rs.getBoolean("adm"), true));
+                usuarios.add(new Usuario(rs.getString("id"), rs.getString("nome"), rs.getString("cpf"), rs.getString("email"), rs.getString("senha"), rs.getString("telefone"), temp, rs.getBoolean("adm")));
 
             }
             ps.close();

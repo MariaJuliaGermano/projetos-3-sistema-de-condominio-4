@@ -81,7 +81,7 @@ public class HomeView {
                         boolean admin = scanner.nextBoolean();
                         scanner.nextLine(); // limpar buffer
 
-                        Usuario novoUsuario = new Usuario(nome, cpf, email, senha, telefone, tipoUsuario, admin, false);
+                        Usuario novoUsuario = new Usuario(nome, cpf, email, senha, telefone, tipoUsuario, admin);
                         userRepo.adicionarUsuario(novoUsuario);
                         System.out.println("Usuário criado com sucesso!");
                     }

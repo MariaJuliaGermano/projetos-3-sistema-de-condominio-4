@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class Usuario {
     
-    private final String id = UUID.randomUUID().toString();
+    private final String id;
     private String nome;
     private Long cpf;
     private String email;
@@ -15,24 +15,26 @@ public class Usuario {
     private String tipoUsuario;
     private Boolean admin;
 
-    public Usuario(String nome, String cpf, String email, String senha, String Telefone, String tipoUsuario, Boolean admin, Boolean auth){
-        if(!auth){
-            setNome(nome);
-            setCpf(cpf);
-            setEmail(email);
-            setSenha(senha);
-            setTelefone(Telefone);
-            setTipoUsuario(tipoUsuario);
-            setAdmin(admin);
-        } else{
-            setNome(nome);
-            setCpf(cpf);
-            setEmail(email);
-            this.senha = senha;
-            setTelefone(Telefone);
-            setTipoUsuario(tipoUsuario);
-            setAdmin(admin);
-        }
+    public Usuario(String nome, String cpf, String email, String senha, String Telefone, String tipoUsuario, Boolean admin){ //para criar um novo usuario
+        this.id = UUID.randomUUID().toString();
+        setNome(nome);
+        setCpf(cpf);
+        setEmail(email);
+        setSenha(senha);
+        setTelefone(Telefone);
+        setTipoUsuario(tipoUsuario);
+        setAdmin(admin);
+    }
+
+    public Usuario(String id, String nome, String cpf, String email, String senha, String Telefone, String tipoUsuario, Boolean admin){ //para receber uma consulta do banco de dados
+        this.id = id;
+        setNome(nome);
+        setCpf(cpf);
+        setEmail(email);
+        this.senha = senha;
+        setTelefone(Telefone);
+        setTipoUsuario(tipoUsuario);
+        setAdmin(admin);
     }
 
     public void setNome(String novoNome) throws IllegalArgumentException{
