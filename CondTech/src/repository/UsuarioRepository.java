@@ -51,10 +51,35 @@ public class UsuarioRepository {
             ps.setString(1, Nome);
 
             ResultSet rs =  ps.executeQuery();
-            ps.close();
+            
+            if(rs.next()){
+                String tipoMorador = rs.getString("tipoUsuario");
+                String temp;
 
-            Usuario user = new Usuario(rs.getString("nome"), rs.getString("cpf"), rs.getString("email"), rs.getString("senha"), rs.getString("telefone"), rs.getString("tipoUsuario"), rs.getBoolean("adm"));
-            return user;
+                switch (tipoMorador) {
+                    case "Morador":
+                        temp = "1";
+                        break;
+                    case "Síndico":
+                        temp = "2";
+                        break;
+                    case "Funcionário":
+                        temp = "3";
+                        break;   
+                    default:
+                        temp = null;
+                        break;
+                }
+                
+                Usuario user = new Usuario(rs.getString("nome"), rs.getString("cpf"), rs.getString("email"), rs.getString("senha"), rs.getString("telefone"), temp, rs.getBoolean("adm"), true);
+                
+                return user;
+            } else{
+                return null;
+            }
+
+            // Usuario user = new Usuario(rs.getString("nome"), rs.getString("cpf"), rs.getString("email"), rs.getString("senha"), rs.getString("telefone"), rs.getString("tipoUsuario"), rs.getBoolean("adm"));
+            // ps.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -69,11 +94,30 @@ public class UsuarioRepository {
         try {
             PreparedStatement ps = cnn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            ps.close();
 
             while(rs.next()){
-                usuarios.add(new Usuario(rs.getString("nome"), rs.getString("cpf"), rs.getString("email"), rs.getString("senha"), rs.getString("telefone"), rs.getString("tipoUsuario"), rs.getBoolean("adm")));
+                String tipoMorador = rs.getString("tipoUsuario");
+                String temp;
+
+                switch (tipoMorador) {
+                    case "Morador":
+                        temp = "1";
+                        break;
+                    case "Síndico":
+                        temp = "2";
+                        break;
+                    case "Funcionário":
+                        temp = "3";
+                        break;   
+                    default:
+                        temp = null;
+                        break;
+                }
+
+                usuarios.add(new Usuario(rs.getString("nome"), rs.getString("cpf"), rs.getString("email"), rs.getString("senha"), rs.getString("telefone"), temp, rs.getBoolean("adm"), true));
+
             }
+            ps.close();
 
         } catch (SQLException e) {
             e.printStackTrace();

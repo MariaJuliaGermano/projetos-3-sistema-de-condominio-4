@@ -15,14 +15,24 @@ public class Usuario {
     private String tipoUsuario;
     private Boolean admin;
 
-    public Usuario(String nome, String cpf, String email, String senha, String Telefone, String tipoUsuario, Boolean admin){
-        setNome(nome);
-        setCpf(cpf);
-        setEmail(email);
-        setSenha(senha);
-        setTelefone(Telefone);
-        setTipoUsuario(tipoUsuario);
-        setAdmin(admin);
+    public Usuario(String nome, String cpf, String email, String senha, String Telefone, String tipoUsuario, Boolean admin, Boolean auth){
+        if(!auth){
+            setNome(nome);
+            setCpf(cpf);
+            setEmail(email);
+            setSenha(senha);
+            setTelefone(Telefone);
+            setTipoUsuario(tipoUsuario);
+            setAdmin(admin);
+        } else{
+            setNome(nome);
+            setCpf(cpf);
+            setEmail(email);
+            this.senha = senha;
+            setTelefone(Telefone);
+            setTipoUsuario(tipoUsuario);
+            setAdmin(admin);
+        }
     }
 
     public void setNome(String novoNome) throws IllegalArgumentException{
@@ -239,7 +249,7 @@ public class Usuario {
                         }
 
                     } else{
-                        throw new IllegalArgumentException("o parâmero passado não possui 1 dígito");
+                        throw new IllegalArgumentException("o parâmero passado não possui 1 dígito");/////////
                     }
                 } else{
                     throw new IllegalArgumentException("o parâmetro passado contém uma quabra de linha");
