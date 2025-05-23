@@ -2,7 +2,6 @@ package service;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
 import model.Usuario;
 import repository.UsuarioRepository;
 
@@ -28,6 +27,7 @@ public class AuthService {
         catch(NoSuchAlgorithmException n){
             throw new RuntimeException("o algorítmo sha-256 não está disponível");
         }
+        
         return user != null && user.getSenha().equals(Senha);
     }
 }
