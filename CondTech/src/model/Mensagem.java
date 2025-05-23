@@ -1,21 +1,35 @@
 package model;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 public class Mensagem {
-    private final String id = UUID.randomUUID().toString();
+    private final String id;
     private String remetente;
     private String destinatario;
     private String conteudo;
     private LocalDateTime dataHora;
     private boolean lida;
 
-    public Mensagem(String remetente, String destinatario, String conteudo) {
+    public Mensagem(String remetente, String destinatario, String conteudo) { //para criar uma nova mensagem
+        this.id = UUID.randomUUID().toString();
         this.remetente = remetente;
         this.destinatario = destinatario;
         this.conteudo = conteudo;
         this.dataHora = LocalDateTime.now();
+        this.lida = false;
+    }
+
+    public Mensagem(String id, String remetente, String destinatario, String conteudo, String dataHora) { //para uma mensagem consultada
+        this.id = id;
+        this.remetente = remetente;
+        this.destinatario = destinatario;
+        this.conteudo = conteudo;
+
+        LocalDateTime time = LocalDateTime.parse(dataHora);
+        this.dataHora = time;
+
         this.lida = false;
     }
 

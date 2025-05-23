@@ -1,27 +1,67 @@
 package repository;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import connection.Conexao;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import model.Mensagem;
 
 public class MensagemRepository {
-    private final List<Mensagem> mensagens;
+    private Connection cnn;
     private static final String CHAT_GRUPO = "CHAT_CONDOMINIO"; 
 
     public MensagemRepository() {
-        this.mensagens = new ArrayList<>();
+        try {
+            this.cnn = Conexao.getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void adicionarMensagem(Mensagem mensagem) {
-        mensagens.add(mensagem);
+        String sql = "INSERT INTO mensagens (id, remetente, destinatario, conteudo, dataHora, lida) VALUES(?, ?, ?, ?, ?, ?)";
+        
+        try {
+            PreparedStatement ps = cnn.prepareStatement(sql);
+
+            ps.setString(1, mensagem.getId());
+            ps.setString(2, mensagem.getRemetente());
+            ps.setString(3, mensagem.getDestinatario());
+            ps.setString(4, mensagem.getConteudo());
+            ps.setString(5, mensagem.getDataHora().toString());
+            ps.setBoolean(6, mensagem.isLida());
+
+            ps.execute();
+            ps.close();
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Mensagem> listarMensagensGrupo() {
-        return mensagens.stream()
-                .filter(m -> m.getDestinatario().equals(CHAT_GRUPO))
-                .collect(Collectors.toList());
+        String sql = "SELECT * FROM mensagens";
+        List<Mensagem> mensagens = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = cnn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                mensagens.add(new Mensagem(rs.getString("id"), rs.getString("remetente"), rs.getString("destinatario"), rs.getString("conteudo"), rs.getString("dataHora")));
+            }
+            ps.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return mensagens;
     }
     
     public static String getIdGrupo() {
