@@ -53,7 +53,15 @@ public class MensagemRepository {
             ResultSet rs = ps.executeQuery();
 
             while(rs.next()){
-                mensagens.add(new Mensagem(rs.getString("id"), rs.getString("remetente"), rs.getString("destinatario"), rs.getString("conteudo"), rs.getString("dataHora")));
+                mensagens.add(
+                    new Mensagem(
+                        rs.getString("id"),
+                        rs.getString("remetente"),
+                        rs.getString("destinatario"),
+                        rs.getString("conteudo"),
+                        rs.getString("dataHora")
+                    )
+                );
             }
             ps.close();
 

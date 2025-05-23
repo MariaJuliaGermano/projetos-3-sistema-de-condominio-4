@@ -52,7 +52,16 @@ public class AreaReservadaRepository {
             ResultSet rs = ps.executeQuery();
 
             while(rs.next()){
-                reservas.add(new AreaReservada(rs.getString("id"), rs.getString("idCondominio"), rs.getString("idMorador"), rs.getDate("dataReserva").toLocalDate(), rs.getTime("horarioReservado").toLocalTime(), rs.getString("sttatus")));
+                reservas.add(
+                    new AreaReservada(
+                        rs.getString("id"),
+                        rs.getString("idCondominio"),
+                        rs.getString("idMorador"),
+                        rs.getDate("dataReserva").toLocalDate(),
+                        rs.getTime("horarioReservado").toLocalTime(),
+                        rs.getString("sttatus")
+                    )
+                );
             }
             ps.close();
 

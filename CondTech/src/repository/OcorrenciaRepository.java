@@ -53,7 +53,16 @@ public class OcorrenciaRepository {
 
             while(rs.next()){
                 List<String> anexos = Arrays.asList(rs.getString("anexos"));
-                ocorrencias.add(new Ocorrencia(rs.getString("id"), rs.getString("idMorador"), rs.getDate("dataRegistro").toLocalDate(), rs.getString("descricao"), rs.getString("sttatus"), anexos));
+                ocorrencias.add(
+                    new Ocorrencia(
+                        rs.getString("id"),
+                        rs.getString("idMorador"),
+                        rs.getDate("dataRegistro").toLocalDate(),
+                        rs.getString("descricao"),
+                        rs.getString("sttatus"),
+                        anexos
+                    )
+                );
             }
             ps.close();
 

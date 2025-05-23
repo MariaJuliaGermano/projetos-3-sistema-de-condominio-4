@@ -114,8 +114,18 @@ public class UsuarioRepository {
                         break;
                 }
 
-                usuarios.add(new Usuario(rs.getString("id"), rs.getString("nome"), rs.getString("cpf"), rs.getString("email"), rs.getString("senha"), rs.getString("telefone"), temp, rs.getBoolean("adm")));
-
+                usuarios.add(
+                    new Usuario(
+                        rs.getString("id"),
+                        rs.getString("nome"),
+                        rs.getString("cpf"),
+                        rs.getString("email"),
+                        rs.getString("senha"),
+                        rs.getString("telefone"),
+                        temp,
+                        rs.getBoolean("adm")
+                    )
+                );
             }
             ps.close();
 
