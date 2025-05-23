@@ -23,7 +23,7 @@ public class OcorrenciaRepository {
     }
 
     public void adicionarOcorrencia(Ocorrencia ocorrencia) {
-         String sql = "INSERT INTO ocorrencias (id, idMorador, dataRegistro, descricao, sttatus, anexos) VALUES(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO ocorrencias (id, idMorador, dataRegistro, descricao, sttatus, anexos) VALUES(?, ?, ?, ?, ?, ?)";
         
         try {
             PreparedStatement ps = cnn.prepareStatement(sql);
