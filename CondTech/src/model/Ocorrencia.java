@@ -6,14 +6,24 @@ import java.util.List;
 
 public class Ocorrencia {
     
-    private final String id = UUID.randomUUID().toString();
+    private final String id;
     private String idMorador;
     private LocalDate dataRegistro;
     private String descricao;
     private String status;
     private List<String> anexos;
 
-    public Ocorrencia(String idMorador, LocalDate dataRegistro, String descricao, String status, List<String> anexos) {
+    public Ocorrencia(String idMorador, LocalDate dataRegistro, String descricao, String status, List<String> anexos) { //para criar uma nova ocorrência
+        this.id = UUID.randomUUID().toString();
+        this.idMorador = idMorador;
+        this.dataRegistro = dataRegistro;
+        this.descricao = descricao;
+        this.status = status;
+        this.anexos = anexos;
+    }
+
+    public Ocorrencia(String id, String idMorador, LocalDate dataRegistro, String descricao, String status, List<String> anexos) { //para consultar uma ocorrencia
+        this.id = id;
         this.idMorador = idMorador;
         this.dataRegistro = dataRegistro;
         this.descricao = descricao;
