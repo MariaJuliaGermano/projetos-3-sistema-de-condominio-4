@@ -150,7 +150,7 @@
 </ul>
 
 # 🚀 Documentação para Executar o Projeto
-###1️⃣ Baixar e instalar os programas necessários
+### 1️⃣ Baixar e instalar os programas necessários
 
 <ul>
 
@@ -175,13 +175,13 @@
 
 </ul>
 
-###2️⃣ Clonar o repositório do projeto 
+### 2️⃣ Clonar o repositório do projeto 
 
 #### Utilizar códigos no terminal de comando
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
 cd nome-do-repositorio
 
-###3️⃣ Configurar o banco de dados
+### 3️⃣ Configurar o banco de dados
 
 <ul>
 
