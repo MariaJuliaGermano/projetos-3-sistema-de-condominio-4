@@ -119,21 +119,28 @@
   </li>
 </ul>
 
-## 🖇️ Entrega 4
+## 🖇️ Entrega 4 - 28/05
 
 <ul>
 
   <li>
-    <a  href="" 
-        >Diagrama de Classes</a
+    <a  href="https://lucid.app/lucidchart/9c625870-c04a-4fed-9088-061c8881d635/edit?viewport_loc=-85%2C-279%2C3631%2C1681%2C0_0&invitationId=inv_02c7b44c-c23f-4ced-99e4-f91deefe201e" 
+        >Diagrama de Classes Atualizado</a
     >
   </li>
 
   <li>
-    <a  href=""
-      >ScreenCast X</a
+    <a  href="https://youtu.be/0yYABjT2GVM"
+      >ScreenCast Automação de Testes Unitários</a
     >
   </li>
+
+  <li>
+    <a  href="https://youtu.be/AMB6TKv1E14"
+      >ScreenCast Funcionamento do Software</a
+    >
+  </li>
+  
   <li>
     <p>Print do Issue/bug tracker</p>
   </li>
@@ -141,3 +148,61 @@
   ![IssueTracker](assets/img/IssueTracker.png)
   
 </ul>
+
+# 🚀 Documentação para Executar o Projeto
+###1️⃣ Baixar e instalar os programas necessários
+
+<ul>
+
+  <li>
+    <a  href="https://www.oracle.com/java/technologies/javase-downloads.html" 
+        >Java JDK (versão 17 ou superior)</a
+    >
+  </li>
+
+  <li>
+    <a  href="https://dev.mysql.com/downloads/"
+      >MySQL + MySQL Workbench</a
+    >
+  </li>
+
+  <li>
+    <a  href="https://www.eclipse.org/"
+      >IDE para Java (opcional, mas recomendado)
+</a
+    >
+  </li>
+
+</ul>
+
+###2️⃣ Clonar o repositório do projeto 
+
+#### Utilizar códigos no terminal de comando
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+cd nome-do-repositorio
+
+###3️⃣ Configurar o banco de dados
+
+<ul>
+
+  <li>
+    Abra o MySQL Workbench.
+  </li>
+
+  <li>
+    Crie um banco com o nome "condtech_db"
+  </li>
+
+  <li>
+    Importe o arquivo database.sql que está no repositório para criar as tabelas e dados necessários:
+  </li>
+  
+  <li>
+    Ajustar credenciais de conexão no código (url, user e passoword)
+  </li>
+</ul>
+
+#### ✅ Projeto pronto para ser executado 
+
+
+
