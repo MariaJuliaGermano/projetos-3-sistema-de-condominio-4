@@ -194,7 +194,7 @@ cd nome-do-repositorio
   </li>
 
   <li>
-    Importe o arquivo database.sql que está no repositório para criar as tabelas e dados necessários:
+    Baixe o arquivo condtech_db.zip que está neste repositório e importe o arquivo no mysql workbench 
   </li>
   
   <li>
