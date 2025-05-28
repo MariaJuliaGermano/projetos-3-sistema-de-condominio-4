@@ -179,7 +179,7 @@
 
 #### Utilizar códigos no terminal de comando
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+<br>cd nome-do-repositorio
 
 ### 3️⃣ Configurar o banco de dados
 
