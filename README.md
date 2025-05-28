@@ -137,6 +137,7 @@
   <li>
     <p>Print Issue/bug tracker</p>
   </li>
+  
   ![IssueTracker](assets/img/IssueTracker.png)
   
 </ul>
