@@ -9,8 +9,6 @@ import controller.AreaReservadaController;
 import model.AreaReservada;
 import model.Usuario;
 import repository.AreaReservadaRepository;
-//import repository.OcorrenciaRepository;
-//import repository.UsuarioRepository;
 
 public class AreaReservadaView {
 
