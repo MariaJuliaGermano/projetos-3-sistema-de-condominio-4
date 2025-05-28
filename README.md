@@ -135,6 +135,6 @@
     >
   </li>
 
-  ![IssueTracker](assets\img\IssueTracker.png)
+  ![IssueTracker](assets/img/IssueTracker.png)
   
 </ul>
