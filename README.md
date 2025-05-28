@@ -135,9 +135,9 @@
     >
   </li>
   <li>
-    <p>Print Issue/bug tracker</p>
+    <p>Print do Issue/bug tracker</p>
   </li>
-  
+
   ![IssueTracker](assets/img/IssueTracker.png)
   
 </ul>
