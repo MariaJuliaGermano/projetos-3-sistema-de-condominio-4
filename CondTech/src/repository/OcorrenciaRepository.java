@@ -1,5 +1,7 @@
 package repository;
 
+import abstrato.repository.OcorrenciaRepositoryAbstract;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +12,7 @@ import java.util.List;
 import connection.Conexao;
 import model.Ocorrencia;
 
-public class OcorrenciaRepository {
+public class OcorrenciaRepository extends OcorrenciaRepositoryAbstract{
 
     private Connection cnn;
 
@@ -22,6 +24,7 @@ public class OcorrenciaRepository {
         }
     }
 
+    @Override
     public void adicionarOcorrencia(Ocorrencia ocorrencia) {
         String sql = "INSERT INTO ocorrencias (id, idMorador, dataRegistro, descricao, sttatus, anexos) VALUES(?, ?, ?, ?, ?, ?)";
         
@@ -43,6 +46,7 @@ public class OcorrenciaRepository {
         }
     }
 
+    @Override
     public List<Ocorrencia> listarOcorrencias() {
         String sql = "SELECT * FROM ocorrencias";
         List<Ocorrencia> ocorrencias = new ArrayList<>();

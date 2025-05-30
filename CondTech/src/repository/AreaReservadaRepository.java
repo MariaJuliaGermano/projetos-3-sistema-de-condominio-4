@@ -1,5 +1,7 @@
 package repository;
 
+import abstrato.repository.AreaReservadaAbstract;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +12,7 @@ import connection.Conexao;
 
 import model.AreaReservada;
 
-public class AreaReservadaRepository {
+public class AreaReservadaRepository extends AreaReservadaAbstract{
     
     private Connection cnn;
 
@@ -22,6 +24,7 @@ public class AreaReservadaRepository {
         }
     }
 
+    @Override
     public void adicionarAreaReservada(AreaReservada areaReservada) {
         String sql = "INSERT INTO reservas (id, idCondominio, idMorador, dataReserva, horarioReservado, sttatus) VALUES(?, ?, ?, ?, ?, ?)";
         
@@ -43,6 +46,7 @@ public class AreaReservadaRepository {
         }
     }
 
+    @Override
     public List<AreaReservada> listarAreaReservadas() {
         String sql = "SELECT * FROM reservas";
         List<AreaReservada> reservas = new ArrayList<>();

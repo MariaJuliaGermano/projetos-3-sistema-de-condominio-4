@@ -1,5 +1,7 @@
 package repository;
 
+import abstrato.repository.MensagemRepositoryAbstract;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +13,7 @@ import java.util.List;
 
 import model.Mensagem;
 
-public class MensagemRepository {
+public class MensagemRepository extends MensagemRepositoryAbstract{
     private Connection cnn;
     private static final String CHAT_GRUPO = "CHAT_CONDOMINIO"; 
 
@@ -23,6 +25,7 @@ public class MensagemRepository {
         }
     }
 
+    @Override
     public void adicionarMensagem(Mensagem mensagem) {
         String sql = "INSERT INTO mensagens (id, remetente, destinatario, conteudo, dataHora, lida) VALUES(?, ?, ?, ?, ?, ?)";
         
@@ -44,6 +47,7 @@ public class MensagemRepository {
         }
     }
 
+    @Override
     public List<Mensagem> listarMensagensGrupo() {
         String sql = "SELECT * FROM mensagens";
         List<Mensagem> mensagens = new ArrayList<>();
