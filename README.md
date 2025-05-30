@@ -54,7 +54,7 @@
 
 *👨‍💻 Gabriel Tenorio
 
-## 🖇️ Entrega 1
+## 🖇️ Entrega 1 - 22/03
 
 <ul>
 
@@ -84,7 +84,7 @@
 
 </ul>
 
-## 🖇️ Entrega 2
+## 🖇️ Entrega 2 - 09/04
 
 <ul>
 
@@ -102,7 +102,7 @@
   
 </ul>
 
-## 🖇️ Entrega 3
+## 🖇️ Entrega 3 - 30/04
 
 <ul>
 
@@ -117,6 +117,14 @@
       >ScreenCast 3</a
     >
   </li>
+
+  <li>
+    <p>Print do Issue/bug tracker</p>
+  </li>
+  
+  ![IssueTracker](assets/img/IssueTracker.png)
+
+  
 </ul>
 
 ## 🖇️ Entrega 4 - 29/05
