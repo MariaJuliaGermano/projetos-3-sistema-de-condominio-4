@@ -1,10 +1,12 @@
 package controller;
 
+import abstrato.controller.LoginControllerAbastract;
+
 import model.Usuario;
 import repository.UsuarioRepository;
 import service.AuthService;
 
-public class LoginController {
+public class LoginController extends LoginControllerAbastract{
     private AuthService authService;
     private UsuarioRepository repo;
 
@@ -13,6 +15,7 @@ public class LoginController {
         this.repo = repo;
     }
 
+    @Override
     public Usuario fazerLogin(String Nome, String Senha) {
         if (authService.autenticar(Nome, Senha)) {
             Usuario user = repo.buscarPorNome(Nome);

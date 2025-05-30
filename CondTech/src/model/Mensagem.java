@@ -1,9 +1,11 @@
 package model;
 
+import abstrato.model.MensagemAbstract;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class Mensagem {
+public class Mensagem extends MensagemAbstract{
     private final String id;
     private String remetente;
     private String destinatario;
@@ -32,11 +34,24 @@ public class Mensagem {
         this.lida = false;
     }
 
+    @Override
     public String getId() { return id; }
+    
+    @Override
     public String getRemetente() { return remetente; }
+    
+    @Override
     public String getDestinatario() { return destinatario; }
+    
+    @Override
     public String getConteudo() { return conteudo; }
+    
+    @Override
     public LocalDateTime getDataHora() { return dataHora; }
+    
+    @Override
     public boolean isLida() { return lida; }
+    
+    @Override
     public void setLida(boolean lida) { this.lida = lida; }
 }

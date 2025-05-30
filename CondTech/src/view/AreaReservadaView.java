@@ -1,5 +1,7 @@
 package view;
 
+import abstrato.view.AreaReservadaViewAbstract;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
@@ -10,7 +12,7 @@ import model.AreaReservada;
 import model.Usuario;
 import repository.AreaReservadaRepository;
 
-public class AreaReservadaView {
+public class AreaReservadaView extends AreaReservadaViewAbstract{
 
     private final Scanner scanner;
     private final AreaReservadaController areaController;
@@ -20,6 +22,7 @@ public class AreaReservadaView {
         this.areaController = new AreaReservadaController(arRepo);
     }
 
+    @Override
     public void exibirMenu(Usuario usuarioLogado) {
         int opcao;
         do {

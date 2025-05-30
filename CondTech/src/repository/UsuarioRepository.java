@@ -1,4 +1,7 @@
 package repository;
+
+import abstrato.repository.UsuarioRepositoryAbstract;
+
 import java.util.ArrayList;
 import java.util.List;
 import connection.Conexao;
@@ -9,7 +12,7 @@ import java.sql.SQLException;
 
 import model.Usuario;
 
-public class UsuarioRepository {
+public class UsuarioRepository extends UsuarioRepositoryAbstract{
     
     private Connection cnn;
 
@@ -21,6 +24,7 @@ public class UsuarioRepository {
         }
     }
 
+    @Override
     public void adicionarUsuario(Usuario usuario) {
         String sql = "INSERT INTO usuarios (id, nome, cpf, email, senha, telefone, tipoUsuario, adm) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         
@@ -44,6 +48,7 @@ public class UsuarioRepository {
         }
     }
 
+    @Override
     public Usuario buscarPorNome(String Nome) {
         String sql = "SELECT * FROM usuarios WHERE NOME = ?";
         try {
@@ -78,15 +83,13 @@ public class UsuarioRepository {
                 return null;
             }
 
-            // Usuario user = new Usuario(rs.getString("nome"), rs.getString("cpf"), rs.getString("email"), rs.getString("senha"), rs.getString("telefone"), rs.getString("tipoUsuario"), rs.getBoolean("adm"));
-            // ps.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
     }
 
+    @Override
     public List<Usuario> listarUsuarios() {
         String sql = "SELECT * FROM usuarios";
         List<Usuario> usuarios = new ArrayList<>();

@@ -1,5 +1,7 @@
 package view;
 
+import abstrato.view.OcorrenciaViewAbstract;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +12,7 @@ import model.Ocorrencia;
 import model.Usuario;
 import repository.OcorrenciaRepository;
 
-public class OcorrenciaView {
+public class OcorrenciaView extends OcorrenciaViewAbstract{
 
     private final Scanner scanner;
     private final OcorrenciaController ocorrenciaController;
@@ -20,6 +22,7 @@ public class OcorrenciaView {
         this.ocorrenciaController = new OcorrenciaController(ocRepo);
     }
 
+    @Override
     public void exibirMenu(Usuario usuarioLogado) {
         int opcao;
         do {

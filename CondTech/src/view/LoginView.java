@@ -1,5 +1,7 @@
 package view;
 
+import abstrato.view.LoginViewAbstract;
+
 import java.util.Scanner;
 
 import controller.LoginController;
@@ -10,7 +12,7 @@ import repository.UsuarioRepository;
 import repository.MensagemRepository;
 import service.AuthService;
 
-public class LoginView {
+public class LoginView extends LoginViewAbstract{
 
     private final Scanner scanner;
 
@@ -30,6 +32,7 @@ public class LoginView {
         this.loginController = new LoginController(new AuthService(userRepo), userRepo);
     }
 
+    @Override
     public void exibirMenu() {
         int opcao;
         do {

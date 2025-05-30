@@ -1,5 +1,7 @@
 package view;
 
+import abstrato.view.HomeViewAbstract;
+
 import java.util.Scanner;
 
 import model.Usuario;
@@ -8,7 +10,7 @@ import repository.OcorrenciaRepository;
 import repository.UsuarioRepository;
 import repository.MensagemRepository;
 
-public class HomeView {
+public class HomeView extends HomeViewAbstract{
 
     private final Scanner scanner;
     private final UsuarioRepository  userRepo;
@@ -25,6 +27,7 @@ public class HomeView {
         this.msgRepo = msgRepo;
     }
 
+    @Override
     public void exibirMenu(Usuario usuarioLogado) {
         int opcao;
         do {
