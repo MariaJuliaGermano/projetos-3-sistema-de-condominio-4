@@ -1,10 +1,12 @@
 package model;
 
+import abstrato.model.UsuarioAbstract;
+
 import java.util.UUID;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class Usuario {
+public class Usuario extends UsuarioAbstract{
     
     private final String id;
     private String nome;
@@ -37,6 +39,7 @@ public class Usuario {
         setAdmin(admin);
     }
 
+    @Override
     public void setNome(String novoNome) throws IllegalArgumentException{
         if(novoNome != null){
             if(novoNome.trim() != ""){
@@ -57,6 +60,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public void setCpf(String novoCpf) throws IllegalArgumentException{
         if(novoCpf != null){
             if(novoCpf.trim() != ""){
@@ -95,6 +99,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public void setEmail(String novoEmail) throws IllegalArgumentException{
         if(novoEmail != null){
             if(novoEmail.trim() != ""){
@@ -123,6 +128,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public void setSenha(String novaSenha) throws IllegalArgumentException{
         if(novaSenha != null){
             if(novaSenha.trim() != ""){
@@ -155,6 +161,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public void setTelefone(String novoTelefone) throws IllegalArgumentException{
         if(novoTelefone != null){
             if(novoTelefone.trim() != ""){
@@ -189,6 +196,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public void setTipoUsuario(String novoTipoUsuario) throws IllegalArgumentException{
         if(novoTipoUsuario != null){
             if(novoTipoUsuario.trim() != ""){
@@ -264,6 +272,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public void setAdmin(Boolean admin) throws IllegalArgumentException{
         if(admin != null){
             this.admin = admin;
@@ -272,6 +281,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public String getId() throws IllegalStateException{
         if(this.id != null){
             return this.id;
@@ -280,6 +290,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public String getNome() throws IllegalStateException{
         if(this.nome != null){
             return this.nome;
@@ -288,6 +299,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public Long getCpf() throws IllegalStateException{
         if(this.cpf != 0){
             return this.cpf;
@@ -296,6 +308,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public String getEmail() throws IllegalStateException{
         if(this.email != null){
             return this.email;
@@ -304,6 +317,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public String getSenha() throws IllegalStateException{
         if(this.senha != null){
             return this.senha;
@@ -312,6 +326,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public Long getTelefone() throws IllegalStateException{
         if(this.telefone != 0){
             return this.telefone;
@@ -320,6 +335,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public String getTipoUsuario() throws IllegalStateException{
         if(this.tipoUsuario != null){
             return this.tipoUsuario;
@@ -328,6 +344,7 @@ public class Usuario {
         }
     }
 
+    @Override
     public Boolean getAdmin() throws IllegalArgumentException{
         if(admin != null){
             return this.admin;

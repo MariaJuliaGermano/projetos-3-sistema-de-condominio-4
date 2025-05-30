@@ -1,10 +1,12 @@
 package model;
 
+import abstrato.model.OcorrenciaAbstract;
+
 import java.time.LocalDate;
 import java.util.UUID;
 import java.util.List;
 
-public class Ocorrencia {
+public class Ocorrencia extends OcorrenciaAbstract{
     
     private final String id;
     private String idMorador;
@@ -31,46 +33,57 @@ public class Ocorrencia {
         this.anexos = anexos;
     }
 
+    @Override
     public String getId() {
         return id;
     }
 
+    @Override
     public String getIdMorador() {
         return idMorador;
     }
 
+    @Override
     public void setIdMorador(String idMorador) {
         this.idMorador = idMorador;
     }
 
+    @Override
     public LocalDate getDataRegistro() {
         return dataRegistro;
     }
 
+    @Override
     public void setDataRegistro(LocalDate dataRegistro) {
         this.dataRegistro = dataRegistro;
     }
 
+    @Override
     public String getDescricao() {
         return descricao;
     }
 
+    @Override
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
+    @Override
     public String getStatus() {
         return status;
     }
 
+    @Override
     public void setStatus(String status) {
         this.status = status;
     }
 
+    @Override
     public List<String> getAnexos() {
         return anexos;
     }
 
+    @Override
     public void setAnexos(List<String> anexos) {
         this.anexos = anexos;
     }
