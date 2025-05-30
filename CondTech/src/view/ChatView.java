@@ -1,5 +1,7 @@
 package view;
 
+import abstrato.view.ChatViewAbstract;
+
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +12,7 @@ import model.Usuario;
 import repository.MensagemRepository;
 import repository.UsuarioRepository;
 
-public class ChatView {
+public class ChatView extends ChatViewAbstract{
     private final Scanner scanner;
     private final ChatController chatController;
 
@@ -19,6 +21,7 @@ public class ChatView {
         this.chatController = new ChatController(mensagemRepo, userRepo);
     }
 
+    @Override
     public void exibirMenu(Usuario usuarioLogado) {
         int opcao;
         do {
