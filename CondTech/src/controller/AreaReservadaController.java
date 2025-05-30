@@ -1,11 +1,13 @@
 package controller;
 
+import abstrato.controller.AreaReservadaControllerAbstract;
+
 import java.util.List;
 
 import model.AreaReservada;
 import repository.AreaReservadaRepository;
 
-public class AreaReservadaController {
+public class AreaReservadaController extends AreaReservadaControllerAbstract{
 
     private final AreaReservadaRepository arRepo;
 
