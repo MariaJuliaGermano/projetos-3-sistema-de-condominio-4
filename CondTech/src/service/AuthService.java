@@ -1,17 +1,20 @@
 package service;
 
+import abstrato.service.AuthServiceAbstract;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import model.Usuario;
 import repository.UsuarioRepository;
 
-public class AuthService {
+public class AuthService extends AuthServiceAbstract{
     private UsuarioRepository repo;
 
     public AuthService(UsuarioRepository repo) {
         this.repo = repo;
     }
 
+    @Override
     public boolean autenticar(String Nome, String Senha) {
         Usuario user = repo.buscarPorNome(Nome);
         try{
