@@ -35,6 +35,17 @@ public class OcorrenciaView extends OcorrenciaViewAbstract{
             opcao = scanner.nextInt();
             scanner.nextLine(); // limpar buffer
 
+            try {
+                if(System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } else {
+                    new ProcessBuilder("clear").inheritIO().start().waitFor();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
             switch (opcao) {
                 case 1:
                     registrarOcorrencia(usuarioLogado);
@@ -76,6 +87,17 @@ public class OcorrenciaView extends OcorrenciaViewAbstract{
                 anexos
             );
 
+            try {
+                if(System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } else {
+                    new ProcessBuilder("clear").inheritIO().start().waitFor();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
             ocorrenciaController.registrarOcorrencia(novaOcorrencia);
             System.out.println("Ocorrência registrada com sucesso!");
 
@@ -103,6 +125,19 @@ public class OcorrenciaView extends OcorrenciaViewAbstract{
                     System.out.println("Anexos: Nenhum");
                 }
                 System.out.println("--------------------------");
+            }
+
+            System.out.println("\nPRESSIONE ENTER PARA CONTINUAR...");
+            scanner.nextLine();
+            try {
+                if(System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } else {
+                    new ProcessBuilder("clear").inheritIO().start().waitFor();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
             }
         }
     }

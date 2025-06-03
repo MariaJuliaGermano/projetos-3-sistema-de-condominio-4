@@ -98,7 +98,7 @@ public class LoginView extends LoginViewAbstract{
                     break;
 
                 case 0:
-                    System.out.println("Encerrando o CondTech. Até logo!");
+                    System.out.println("\nEncerrando o CondTech. Até logo!\n");
                     break;
 
                 default:
