@@ -35,6 +35,18 @@ public class LoginView extends LoginViewAbstract{
     @Override
     public void exibirMenu() {
         int opcao;
+
+            try {
+                if(System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } else {
+                    new ProcessBuilder("clear").inheritIO().start().waitFor();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
         do {
             System.out.println("\n==================================");
             System.out.println("        Bem-vindo a CondTech");
@@ -45,6 +57,17 @@ public class LoginView extends LoginViewAbstract{
             opcao = scanner.nextInt();
             scanner.nextLine();
 
+            try {
+                if(System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } else {
+                    new ProcessBuilder("clear").inheritIO().start().waitFor();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
             switch (opcao) {
                 case 1:
                     System.out.print("Nome: ");
@@ -52,6 +75,17 @@ public class LoginView extends LoginViewAbstract{
 
                     System.out.print("Senha: ");
                     String Senha = scanner.nextLine();
+
+                    try {
+                        if(System.getProperty("os.name").contains("Windows")){
+                            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                        } else {
+                            new ProcessBuilder("clear").inheritIO().start().waitFor();
+                        }
+                    }
+                    catch(Exception e){
+                        e.printStackTrace();
+                    }
 
                     Usuario usuarioLogado = loginController.fazerLogin(Nome, Senha);
 
