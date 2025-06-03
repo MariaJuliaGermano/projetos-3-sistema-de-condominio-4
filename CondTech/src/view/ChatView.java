@@ -35,6 +35,17 @@ public class ChatView extends ChatViewAbstract{
             opcao = scanner.nextInt();
             scanner.nextLine(); // limpar buffer
 
+            try {
+                if(System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } else {
+                    new ProcessBuilder("clear").inheritIO().start().waitFor();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
             switch (opcao) {
                 case 1:
                     verMensagens();
@@ -75,6 +86,17 @@ public class ChatView extends ChatViewAbstract{
         
         System.out.println("\nPressione ENTER para continuar...");
         scanner.nextLine();
+
+        try {
+            if(System.getProperty("os.name").contains("Windows")){
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void enviarMensagem(Usuario usuarioLogado) {
@@ -83,10 +105,31 @@ public class ChatView extends ChatViewAbstract{
         String conteudo = scanner.nextLine();
         
         if (conteudo.equalsIgnoreCase("cancelar")) {
+            try {
+                if(System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } else {
+                    new ProcessBuilder("clear").inheritIO().start().waitFor();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
             return;
         }
         
         chatController.enviarMensagemGrupo(usuarioLogado.getId(), conteudo);
+        try {
+            if(System.getProperty("os.name").contains("Windows")){
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
         System.out.println("Mensagem enviada com sucesso!");
     }
 
@@ -100,5 +143,15 @@ public class ChatView extends ChatViewAbstract{
         
         System.out.println("\nPressione ENTER para continuar...");
         scanner.nextLine();
+        try {
+            if(System.getProperty("os.name").contains("Windows")){
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

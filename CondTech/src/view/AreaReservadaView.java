@@ -35,6 +35,17 @@ public class AreaReservadaView extends AreaReservadaViewAbstract{
             opcao = scanner.nextInt();
             scanner.nextLine(); // limpar buffer
 
+            try {
+                if(System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } else {
+                    new ProcessBuilder("clear").inheritIO().start().waitFor();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
             switch (opcao) {
                 case 1:
                     reservarArea(usuarioLogado);
@@ -72,6 +83,18 @@ public class AreaReservadaView extends AreaReservadaViewAbstract{
             );
 
             areaController.reservarArea(novaReserva);
+
+            try {
+                if(System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } else {
+                    new ProcessBuilder("clear").inheritIO().start().waitFor();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
             System.out.println("Reserva realizada com sucesso!");
 
         } catch (Exception e) {
@@ -94,6 +117,19 @@ public class AreaReservadaView extends AreaReservadaViewAbstract{
                 System.out.println("Horário: " + reserva.getHorarioReservado());
                 System.out.println("Status: " + reserva.getStatus());
                 System.out.println("--------------------------");
+            }
+            System.out.println("\nPRESSIONE ENTER PARA CONTINUAR...\n");
+            scanner.nextLine();
+            
+            try {
+                if(System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } else {
+                    new ProcessBuilder("clear").inheritIO().start().waitFor();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
             }
         }
     }

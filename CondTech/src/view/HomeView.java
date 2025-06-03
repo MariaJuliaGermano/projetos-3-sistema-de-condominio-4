@@ -46,6 +46,17 @@ public class HomeView extends HomeViewAbstract{
             opcao = scanner.nextInt();
             scanner.nextLine(); // limpar buffer
 
+            try {
+                if(System.getProperty("os.name").contains("Windows")){
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                } else {
+                    new ProcessBuilder("clear").inheritIO().start().waitFor();
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
             switch (opcao) {
                 case 1:
                     ChatView chatView = new ChatView(scanner, userRepo, msgRepo);
@@ -84,6 +95,17 @@ public class HomeView extends HomeViewAbstract{
                         boolean admin = scanner.nextBoolean();
                         scanner.nextLine(); // limpar buffer
 
+                        try {
+                            if(System.getProperty("os.name").contains("Windows")){
+                                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                            } else {
+                                new ProcessBuilder("clear").inheritIO().start().waitFor();
+                            }
+                        }
+                        catch(Exception e){
+                            e.printStackTrace();
+                        }
+
                         Usuario novoUsuario = new Usuario(nome, cpf, email, senha, telefone, tipoUsuario, admin);
                         userRepo.adicionarUsuario(novoUsuario);
                         System.out.println("Usuário criado com sucesso!");
@@ -91,9 +113,33 @@ public class HomeView extends HomeViewAbstract{
                     break;
                     
                     case 0:
+
+                        try {
+                            if(System.getProperty("os.name").contains("Windows")){
+                                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                            } else {
+                                new ProcessBuilder("clear").inheritIO().start().waitFor();
+                            }
+                        }
+                        catch(Exception e){
+                            e.printStackTrace();
+                        }
+
                         System.out.println("Logout realizado.");
                         return; // volta ao menu principal
                 default:
+
+                    try {
+                        if(System.getProperty("os.name").contains("Windows")){
+                            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                        } else {
+                            new ProcessBuilder("clear").inheritIO().start().waitFor();
+                        }
+                    }
+                    catch(Exception e){
+                        e.printStackTrace();
+                    }
+
                     System.out.println("Opção inválida.");
             }
 
